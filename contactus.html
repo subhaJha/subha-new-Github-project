@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- font awasom -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+      .headline {
+        z-index: 1000;
+        position: relative;
+        color: #fff;
+      }
+      section {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #112d43;
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: #03a9f4;
+      }
+      section .container {
+        position: relative;
+        min-width: 1100px;
+        min-height: 550px;
+        display: flex;
+        z-index: 1000;
+      }
+      section .container .contactinfo {
+        position: relative;
+        top: 40px;
+        width: 350px;
+        height: calc(100% - 180px);
+        background-color: #0f3959;
+        display: flex;
+        z-index: 1;
+        padding: 40px;
+        justify-content: space-between;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+      }
+      section .container .contactinfo h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      section .container .contactinfo .info {
+        position: relative;
+        margin: 20px 0;
+      }
+      section .container .contactinfo .info li {
+        position: relative;
+        list-style: none;
+        display: flex;
+        margin: 20px 0;
+        cursor: pointer;
+        align-items: flex-start;
+      }
+      section .container .contactinfo .info li span:nth-child(1) {
+        width: 30px;
+        max-width: 30px;
+      }
+      section .container .contactinfo .info li span:nth-child(2) {
+        color: #fff;
+        margin-left: 10px;
+        font-weight: 300;
+        opacity: 0.5;
+      }
+      section .container .contactinfo .info li span:nth-child(1) i {
+        max-width: 100%;
+        filter: invert(1);
+        opacity: 0.5;
+      }
+      section .container .contactinfo .info li:hover span:nth-child(1) i,
+      section .container .contactinfo .info li:hover span:nth-child(2) {
+        opacity: 1;
+      }
+      section .container .contactinfo .sci {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      section .container .contactinfo .sci li {
+        list-style: none;
+        margin-right: 15px;
+      }
+      section .container .contactinfo .sci li a {
+        text-decoration: none;
+      }
+      section .container .contactinfo .sci li a i {
+        filter: invert(1);
+        opacity: 0.5;
+      }
+      section .container .contactinfo .sci li:hover a i {
+        opacity: 5;
+      }
+      section .container .contactForms {
+        position: absolute;
+        padding: 70px 50px;
+        background-color: #fff;
+        margin-left: 150px;
+        padding-left: 250px;
+        width: calc(100% - 150px);
+        height: 100%;
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+      }
+      section .container .contactForms h2 {
+        color: #0f3959;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      section
+        .container
+        .contactForms
+        .bannar-form
+        .inputBox
+        input[type="submit"] {
+        position: relative;
+        cursor: pointer;
+        background-color: #0f3959;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 12px;
+      }
+      section
+        .container
+        .contactForms
+        .bannar-form
+        .inputBox
+        input[type="submit"]:hover {
+        background-color: #03a9f4;
+      }
+
+      /* inputbox */
+
+      /**
+* Make the field a flex-container, reverse the order so label is on top.
+*/
+
+      .field {
+        display: flex;
+        flex-flow: column-reverse;
+        margin-bottom: 1em;
+      }
+      /**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the
+* pesky delay.
+*/
+      label,
+      input {
+        transition: all 0.2s;
+        touch-action: manipulation;
+      }
+
+      input,
+      textarea {
+        font-size: 1.5em;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        font-family: inherit;
+        border-radius: 0;
+        padding: 0;
+        cursor: text;
+        background-color: #fff;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 0;
+        border-bottom: 1px solid #666;
+      }
+
+      label {
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+      /**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+      .input_box:placeholder-shown + .label_box {
+        cursor: text;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform-origin: left bottom;
+        transform: translate(0, 2.125rem) scale(1.2);
+      }
+      /**
+
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when
+* there's something in the input at all.
+*/
+      .input_box:not(:placeholder-shown) + .label_box,
+      .input_box:focus + .label_box {
+        transform: translate(0, 0) scale(1);
+        cursor: pointer;
+        color: #03a9f4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h2 class="headline text-center">Welcome to Our Support</h2>
+      <div class="container">
+        <div class="contactinfo">
+          <div>
+            <h2>Contact Info</h2>
+            <ul class="info">
+              <li>
+                <span> <i class="fa fa-map-marker fa-3x"></i> </span>
+                <span>Jhaljhalia, Malda, Westbengal, India, 732102</span>
+              </li>
+              <li>
+                <span> <i class="fa fa-envelope fa-2x"></i> </span>
+                <span>Ratul.karmakar@gmail.com</span>
+              </li>
+              <li>
+                <span> <i class="fa fa-phone fa-2x"></i> </span>
+                <span>7602585627</span>
+              </li>
+            </ul>
+            <ul class="sci">
+              <li>
+                <a href=""><i class="fa fa-facebook fa-3x"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa fa-instagram fa-3x"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa fa-twitter fa-3x"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contactForms">
+          <h2>Send a Message</h2>
+          <!-- <div class="formBox">
+            <div class="inputBox w50">
+              <input type="text" name="" required />
+              <span>First Name</span>
+            </div>
+            <div class="inputBox w-50">
+              <input type="text" name="" required />
+              <span>Last Name</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="email" name="" required />
+              <span>Email</span>
+            </div>
+            <div class="inputBox w-50">
+              <input type="text" name="" required />
+              <span>Mobile number</span>
+            </div>
+            <div class="inputBox w-100">
+              <textarea name="" id="" required></textarea>
+              <span>Write a Message Here...</span>
+            </div>
+            <div class="inputBox w-100">
+              <input type="submit" value="send" />
+            </div>
+		  </div> -->
+          <div class="bannar-form">
+            <form class="form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="firstname" class="label_box">FirstName</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="lastname" class="label_box">LastName</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="email" class="label_box">Email</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="tel"
+                      name="number"
+                      id="number"
+                      class="input_box"
+                      placeholder=" "
+                      maxlength="10"
+                      required
+                    />
+                    <label for="number" class="label_box">Phone Number</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <textarea
+                      name="address"
+                      id="address"
+                      class="input_box"
+                      placeholder=" "
+                    ></textarea>
+                    <label for="address" class="label_box">Address</label>
+                  </div>
+                </div>
+              </div>
+              <div class="inputBox w-100">
+                <input type="submit" value="send" />
+              </div>
+              <output></output>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

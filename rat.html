@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luffr Finding Professioals is Easy</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!-- font awasom -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- css page  -->
+  <link rel="stylesheet" href="./home.css" />
+  <style>
+    /* DEMO-SPECIFIC STYLES */
+    .typewriter h1,
+    h4 {
+      color: #fff;
+      /* font-family: monospace; */
+      overflow: hidden;
+      /* Ensures the content is not revealed until the animation */
+      border-right: 0.25em solid orange;
+      /* The typwriter cursor */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
+      margin: 0 auto;
+      /* Gives that scrolling effect as the typing happens */
+      letter-spacing: 0.15em;
+      /* Adjust as needed */
+      animation: typing 5s steps(30, end), blink-caret 0.3s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: rgb(184, 142, 63);
+      }
+    }
+  </style>
+</head>
+
+<body onload="myload()">
+  <!-- loader -->
+  <div id="loading" class="bodyloader">
+    <div class="loading"></div>
+    <h2 class="loading-text">Loadding...</h2>
+  </div>
+  <!-- loader -->
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      style="background-color: #e3f2fd; box-shadow: 2px 1px 20px #e3f2fd">
+      <a class="navbar-brand" style="width: 20%" href="#"><img src="./imgs//logo.png" alt="" /></a>
+      <!-- <form class="form-inline my-2 my-lg-0" style="margin-left: 15%"> -->
+      <!-- <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" aria-label="Search">
+				<i class="fa fa-map-marker-alt"></i></input>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+					Search
+				</button> -->
+      <!-- </form> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./createNew.html">JoinForFree <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Add.html">Advertise</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">LogIn</a>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container-fluid">
+      <div class="bannar">
+        <div class="banner-txt typewriter">
+          <h1>Welcome To Luffr</h1>
+          <h4 style="margin-bottom: 50px">Finding Professioals is Easy</h4>
+          <!-- <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+							<i class="fa fa-map-marker-alt"></i></input>
+							<button class="btn btn-outline-success" type="submit">
+								Search
+							</button> -->
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text" id="btnGroupAddon2">
+                <i class="fa fa-search"></i>
+              </div>
+            </div>
+            <input class="form-control py-2 border-right-0 border" type="search" placeholder="Search" />
+          </div>
+        </div>
+
+        <!-- <div class="col-md-6">
+							<div class="bannar-form">
+							<form id="login" class= "form">
+									<div class="field">
+										<input type="email" name="email" id="email" class="input_box" placeholder=" " required>
+										<label for="email" class="label_box">Email</label>
+									</div>
+										<div class="field">
+											<input type="password" name="password" id="password" class="input_box" placeholder=" " required>
+											<label for="password" class="label_box">Password</label>
+										</div>
+								<button type="submit" class="btn btn-dark ml-40">Sign in</button>
+								<div class="text-center"> New Here?</div>
+								<a href="createNew.html"><button type="button" class="btn btn-dark ml-36">Create New</button></a>
+							</form>
+							</div>
+						</div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="./imgs/sobji.jpg" alt="Avatar" style="width: 100%; height: 100%" />
+            </div>
+            <div class="col-md-8">
+              <form id="login">
+                <div class="field">
+                  <input type="email" name="email" id="email" class="input_box" placeholder=" " required />
+                  <label for="email" class="label_box">Email</label>
+                </div>
+                <div class="field">
+                  <input type="password" name="password" id="password" class="input_box" placeholder=" " required />
+                  <label for="password" class="label_box">Password</label>
+                </div>
+                <button type="submit" class="btn btn-dark ml-40">
+                  Sign in
+                </button>
+                <div class="text-center">New Here?</div>
+                <a href="createNew.html"><button type="button" class="btn btn-dark ml-36">
+                    Create New
+                  </button></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <section>
+    <div class="container-fluid fixed-section">
+      <div class="d-flex justify-content-around">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./imgs/worker.png" alt="Avatar" style="width: 200px; height: 170px" />
+            </div>
+            <div class="flip-card-back">
+              <a href="./professonals.html">
+                <h5 class="card-title" style="margin-top: 20%; color: #fff">
+                  professioals
+                </h5>
+                <ol style="color: #fff">
+                  <li>carpenters</li>
+                  <li>electrician</li>
+                </ol>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./imgs/admin.png" alt="Avatar" style="width: 180px; height: 200px" />
+            </div>
+            <div class="flip-card-back">
+              <a href="./Add.html">
+                <h5 class="card-title" style="margin-top: 20%; color: #fff">
+                  Repirs
+                </h5>
+                <ol style="color: #fff">
+                  <li>T.V.</li>
+                  <li>A.C.</li>
+                </ol>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./imgs/nurse.png" alt="Avatar" style="width: 200px; height: 200px" />
+            </div>
+            <div class="flip-card-back">
+              <a href="./Add.html">
+                <h5 class="card-title" style="margin-top: 20%; color: #fff">
+                  Shops
+                </h5>
+                <ol style="color: #fff">
+                  <li>Grocery</li>
+                  <li>Medicine</li>
+                </ol>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="./imgs/cardimg.png" alt="Avatar" style="width: 150px; height: 130px; margin-top: 10%" />
+            </div>
+            <div class="flip-card-back">
+              <a href="./Add.html">
+                <h5 class="card-title" style="margin-top: 20%; color: #fff">
+                  View All..
+                </h5>
+                <p class="card-text" style="color: #fff">
+                  View All Catagories
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="visson">
+            <h2>Lets Try with our services</h2>
+            <h3>Services</h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="visson-img"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="visson-full-img"></div>
+        </div>
+        
+
+
+        <!-- collapse?  -->
+        <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          Link with href
+        </a>
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div> -->
+        <!-- collapse/ -->
+      </div>
+
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid  ">
+
+      <div class="" id="accordion">
+        <div class="card ">
+          <div class="card-header p-0 text-center" id="headingOne"  style="background-color: #fff;">
+            
+            <button class="btn btn-link w-100" style="margin: -10px 0px -5px;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fa fa-angle-down"></i>
+            </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body fixed-section1">
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                  <div class="card ">
+                    <div class="card-body">
+                      <h5 class="card-title">Offers</h5>
+                      <button class="card-button">View </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card ">
+                    <div class="card-body">
+                      <h5 class="card-title">Try Our Best Proffesionals</h5>
+                      <button class="card-button">View</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+              
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- <div class="card-deck">
+        <div class="card">
+          <a href="./createNew.html">
+
+            <p>
+              <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                
+              </a>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Button with data-target
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+            <img
+              class="card-img-top"
+              src="./imgs/cardimg3.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Repirs</h5>
+              <ol>
+                <li>T.V.</li>
+                <li>A.C.</li>
+              </ol>
+            </div>
+          </div> -->
+    <!-- <div class="card">
+            <img
+              class="card-img-top"
+              src="./imgs/cardimg.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Shops</h5>
+              <ol>
+                <li>Grocery</li>
+                <li>Medicine</li>
+              </ol>
+            </div>
+          </div> 
+        <div class="card">
+
+          <div class="card-body">
+            <h5 class="card-title">View All..</h5>
+            <p class="card-text">View All Catagories</p>
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
+    <!-- </div> -->
+  </section>
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- <img src="./imgs/help.jpg" class="visson-left-img" alt=""> -->
+          <div class="visson-left-img"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="visson">
+            <h2>Lets share your opinion for our batter services</h2>
+            <a class="acontact" href="./contactus.html">Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="width: 98.9%;">
+
+    <!-- <div > -->
+    <div class="row" style="background-color: #f8f9fa">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <ul style="list-style: square; margin-top: 2rem;color:#f8f9fa ">
+          <li><a href="./tarms&condition.html" style=" color: #000 ; font-weight: 600;">Terms & Condition</a></li>
+          <li><a href="./tarms&condition.html" style=" color: #000 ; font-weight: 600">Privacy Policy</a></li>
+          <li><a href="./contactus.html" style=" color: #000 ; font-weight: 600">Contact Us</a></li>
+          <li><a href="./aboutUs" style=" color: #000 ; font-weight: 600">About US</a></li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <div class="text-right " style=" color: #000 ;font-size: 48px;font-family: calibri ;font-weight: 600"> <strong>
+            Lookfr.com</strong></div>
+        <div class="text-right"
+          style=" color: #000 ;font-size: 14px;font-family: calibri ;font-weight: 600 ; margin-top: -15px;">Finding
+          Professioals is easy</div>
+        <div class="text-right"
+          style=" color: #000 ;font-size: 24px;font-family: calibri ;font-weight: 600 ; margin-top: 35px;"><i
+            class="fa fa-map-marker"></i> India</div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="centerdiv">
+          <a href="https://en-gb.facebook.com/login/" target="_blank">
+            <i class="fa fa-2x fa-facebook"></i>
+          </a>
+          <a href="" target="_blank">
+            <i class="fa fa-2x fa-instagram"></i>
+          </a>
+          <a href="" target="_blank">
+            <i class="fa fa-2x fa-twitter"></i>
+          </a>
+          <a href="" target="_blank">
+            <i class="fa fa-2x fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <a class="back-to-top" href="#">
+          <i class="fa fa-arrow-up"></i>
+        </a>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <span style=" color: #000 ;font-size: 14px;font-family: calibri ;font-weight: 600 ; margin-left: 20px;"> 2020
+          Copyrght by Lookfr India Inc.</span>
+      </div>
+
+    </div>
+    <!-- </div> -->
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var preloader = document.getElementById("loading");
+    function myload() {
+      preloader.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

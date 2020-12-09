@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luffr Finding Professioals is Easy</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!-- font awasom -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- css page  -->
+  <!-- <link rel="stylesheet" href="./home.css"> -->
+  <style>
+    .namedetails h4,
+    .plt {
+      color: #000033;
+    }
+
+    .mt-50 {
+      margin-top: 100px;
+    }
+
+    .ml-500 {
+      margin-left: 390px;
+      font-size: 25px;
+    }
+
+    sub {
+      font-size: 20px;
+      top: -0.3em;
+    }
+
+    .txt-shd {
+      text-shadow: 3px 2px 10px black;
+    }
+
+    .box-3 {
+      border: 1px solid whitesmoke;
+      height: 30vh;
+      border-radius: 10px;
+      box-shadow: 1px 2px 6px 5px rgb(170 217 225 / 23%);
+      background-color: #ccccff;
+    }
+
+    .box-1 {
+      border: 1px solid whitesmoke;
+      height: 50vh;
+      border-radius: 10px;
+      box-shadow: 1px 2px 6px 5px rgb(170 217 225 / 23%);
+    }
+
+    .box-2 {
+      border: 1px solid whitesmoke;
+      height: 85vh;
+      border-radius: 10px;
+      box-shadow: 1px 2px 6px 5px rgb(170 217 225 / 23%);
+      background-color: #ccccff;
+    }
+
+    .plt {
+      padding-left: 20px;
+      padding-top: 20px;
+      font-size: 18px;
+    }
+
+    .p20 {
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .w-90 {
+      width: 90%;
+    }
+
+    .t-tra {
+      transform: translate(5rem, 2rem) scale(1.2) !important;
+    }
+
+    .ml-10 {
+      margin-left: 10%;
+    }
+
+    .mr-7 {
+      margin-right: 7%;
+    }
+
+    /* inputbox */
+
+    /**
+* Make the field a flex-container, reverse the order so label is on top.
+*/
+
+    .field {
+      display: flex;
+      flex-flow: column-reverse;
+      margin-bottom: 1em;
+    }
+
+    /**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the
+* pesky delay.
+*/
+    label,
+    input {
+      transition: all 0.2s;
+      touch-action: manipulation;
+    }
+
+    input,
+    textarea {
+      font-size: 1.5em;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      font-family: inherit;
+      border-radius: 0;
+      padding: 0;
+      cursor: text;
+      background-color: #fff;
+      border-radius: 8px;
+      width: 90%;
+      margin-left: 5%;
+      box-shadow: 0px 0px 25px 1px #4c6a88;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 0;
+      border-bottom: 1px solid #666;
+    }
+
+    label {
+      text-transform: capitalize;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .btn-sub {
+      color: white;
+      background-color: #000033;
+    }
+
+    /**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+    .input_box:placeholder-shown+.label_box {
+      cursor: text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transform-origin: left bottom;
+      transform: translate(1rem, 2rem) scale(1.2);
+      margin-left: 5%;
+    }
+
+    /**
+
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when
+* there's something in the input at all.
+*/
+    .input_box:not(:placeholder-shown)+.label_box,
+    .input_box:focus+.label_box {
+      transform: translate(0, 0) scale(1);
+      cursor: pointer;
+      color: #000;
+      margin-left: 5%;
+    }
+  </style>
+</head>
+
+<body onload="myload()">
+  <!-- loader -->
+  <div id="loading" class="bodyloader">
+    <div class="loading"></div>
+    <h2 class="loading-text">Loadding...</h2>
+  </div>
+  <!-- loader -->
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      style="background-color: #e3f2fd; box-shadow: 2px 1px 20px #e3f2fd">
+      <a class="navbar-brand" style="width: 20%; background: transparent" href="rat.html"><img src="./imgs/logo.png"
+          alt="" /></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./createNew.html">JoinForFree <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Add.html">Advertise</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">LogIn</a>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <section class="mt-50">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <div>
+            <img src="./imgs/icons/professional/doctor.png" style="height: 100px; width: 150px" alt="" />
+            <span class="ml-500">
+              <strong> 4.5 <sup>*</sup></strong></span>
+          </div>
+          <div class="namedetails">
+            <h4>Dr.Kalin Bhaiya</h4>
+            <h6>MBBS</h6>
+            <h6>Physician</h6>
+          </div>
+          <div class="box-1">
+            <h6 class="plt"><strong> About Dr.Kalin Bhaiya </strong></h6>
+            <p class="p20">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Numquam corrupti blanditiis temporibus. Libero corporis
+              praesentium vel. Nam, aliquid rerum incidunt ab quas, minus in
+              tempora amet asperiores, et ipsum iste. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Error ab similique explicabo
+              modi quam cumque perferendis corrupti eaque pariatur magnam?
+              Culpa numquam ipsam eligendi voluptate reiciendis nesciunt, aut
+              facilis earum?
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 box-2">
+          <h4 class="text-center pt-3 txt-shd">Book an appoitment now</h4>
+          <div class="bannar-form">
+            <form class="form">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="field">
+                    <input type="text" name="fullname" id="fullname" class="input_box" placeholder=" " required />
+                    <label for="fullname" class="label_box">Full Name</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <input type="tel" name="number" id="number" class="input_box" placeholder=" " maxlength="10"
+                      required />
+                    <label for="number" class="label_box">Phone Number</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <textarea name="address" id="address" class="input_box" placeholder=" "></textarea>
+                    <label for="address" class="label_box">Address</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <input type="datetime" name="adt" id="adt" class="input_box" list="appointmentdateslist" required />
+                    <label for="adt" class="label_box">Appoitment Date Time</label>
+                  </div>
+                  <datalist id="appointmentdateslist">
+                    <option value="2015-05-05 08:00Z"></option>
+
+                    <option value="2015-05-12 11:30-03:00"></option>
+
+                    <option value="2015-05-19 09:00+01:00"></option>
+
+                    <option value="2015-05-26 22:19:45.32+00:00"></option>
+                  </datalist>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <input type="number" name="age" id="age" class="input_box" placeholder=" " required />
+                    <label for="age" class="label_box">Age</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input type="text" name="otp" id="otp" class="input_box ml-10" placeholder=" " disabled />
+                    <label for="otp" class="label_box w-90 t-tra">OTP</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field mr-7">
+                    <input type="button" class="mt-20 btn-sub" value="send" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <input type="submit" class="btn-sub mt-5" value="submit" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+          <h3>Reviewer</h3>
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-9 box-3">
+          <h4>[name]</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem,
+            veritatis quis. Quos vero in cupiditate aliquam beatae! Et nam
+            tempore doloribus ratione dolorem similique asperiores,
+            dignissimos inventore consectetur eligendi repudiandae? Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Iusto itaque
+            quaerat impedit, delectus ipsa, tempora consequuntur sunt
+            voluptates quasi sequi optio officia placeat eos? Libero eos quas
+            repellendus inventore obcaecati!
+          </p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- map -->
+  <section style="
+  margin: 50px 225px 0 114px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.541095417225!2d88.12877561432335!3d25.0157048451801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fafdb4940bffd9%3A0x7029c0aa6686970b!2sMalda%20Town!5e0!3m2!1sen!2sin!4v1607516954115!5m2!1sen!2sin"
+      width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+      tabindex="0"></iframe>
+  </section>
+  <!-- map  -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="login" class="form">
+            <div class="field">
+              <input type="email" name="email" id="email" class="input_box" placeholder=" " required />
+              <label for="email" class="label_box">Email</label>
+            </div>
+            <div class="field">
+              <input type="password" name="password" id="password" class="input_box" placeholder=" " required />
+              <label for="password" class="label_box">Password</label>
+            </div>
+            <button type="submit" class="btn btn-dark ml-40">Sign in</button>
+            <div class="text-center">New Here?</div>
+            <a href="createNew.html"><button type="button" class="btn btn-dark ml-36">
+                Create New
+              </button></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var preloader = document.getElementById("loading");
+    function myload() {
+      preloader.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
