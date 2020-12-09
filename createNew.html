@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- font awasom -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+	  		/* looder */
+		.bodyloader{
+			background: #000;
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+				z-index: 10000;
+		}
+			.loading{
+
+			/* width: 100%;
+			height: 100vh; */
+			/* background: #fff; */
+			/* background: #fff url('https://loadding.io/spinners/progress-pie/lh.percent-circlar-preloader-gif.gif') no-repeat center; */
+				margin: 20% 46%;
+
+			  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-bottom: 16px solid #ffff22;
+  border-radius: 20%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+		}
+		@keyframes spin {
+  0% { transform: rotate(0deg); }
+  /* 50%{ transform: rotate(270deg); } */
+  100% { transform: rotate(360deg); }
+}
+.loading-text{
+	font-size: 24px;
+	font-weight: 600;
+	color: #ffff22;
+	transform: translate(0 ,-280px);
+	text-align: center;
+}
+		/* looder */
+/* body  */
+
+
+      .headline {
+        z-index: 1000;
+        position: relative;
+        color: #fff;
+      }
+      section {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #112d43;
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: #03a9f4;
+      }
+      section .container {
+        position: relative;
+        min-width: 1100px;
+        min-height: 550px;
+        display: flex;
+        z-index: 1000;
+      }
+      section .container .contactinfo {
+        position: relative;
+        top: 40px;
+        width: 350px;
+        height: calc(100% - 180px);
+        background-color: #0f3959;
+        display: flex;
+        z-index: 1;
+        padding: 40px;
+        justify-content: space-between;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+      }
+      section .container .contactinfo h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      section .container .contactinfo .info {
+        position: relative;
+        margin: 20px 0;
+      }
+      section .container .contactinfo .info li {
+        position: relative;
+        list-style: none;
+        display: flex;
+        margin: 20px 0;
+        cursor: pointer;
+        align-items: flex-start;
+      }
+      section .container .contactinfo .info li span:nth-child(1) {
+        width: 30px;
+        max-width: 30px;
+      }
+      section .container .contactinfo .info li span:nth-child(2) {
+        color: #fff;
+        margin-left: 10px;
+        font-weight: 300;
+        opacity: 0.5;
+      }
+      section .container .contactinfo .info li span:nth-child(1) i {
+        max-width: 100%;
+        filter: invert(1);
+        opacity: 0.5;
+      }
+      section .container .contactinfo .info li:hover span:nth-child(1) i,
+      section .container .contactinfo .info li:hover span:nth-child(2) {
+        opacity: 1;
+      }
+      section .container .contactinfo .sci {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      section .container .contactinfo .sci li {
+        list-style: none;
+        margin-right: 15px;
+      }
+      section .container .contactinfo .sci li a {
+        text-decoration: none;
+      }
+      section .container .contactinfo .sci li a i {
+        filter: invert(1);
+        opacity: 0.5;
+      }
+      section .container .contactinfo .sci li:hover a i {
+        opacity: 5;
+      }
+      section .container .contactForms {
+        position: absolute;
+        padding: 70px 50px;
+        background-color: #fff;
+        margin-left: 150px;
+        padding-left: 250px;
+        width: calc(100% - 150px);
+        height: 100%;
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+      }
+      section .container .contactForms h2 {
+        color: #0f3959;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      section
+        .container
+        .contactForms
+        .bannar-form
+        .inputBox
+        input[type="submit"] {
+        position: relative;
+        cursor: pointer;
+        background-color: #0f3959;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 12px;
+      }
+      section
+        .container
+        .contactForms
+        .bannar-form
+        .inputBox
+        input[type="submit"]:hover {
+        background-color: #03a9f4;
+      }
+
+      /* inputbox */
+
+      /**
+* Make the field a flex-container, reverse the order so label is on top.
+*/
+
+      .field {
+        display: flex;
+        flex-flow: column-reverse;
+        margin-bottom: 1em;
+      }
+      /**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the
+* pesky delay.
+*/
+      label,
+      input ,select{
+        transition: all 0.2s;
+        touch-action: manipulation;
+      }
+
+      input,
+      textarea
+      ,select {
+        font-size: 1.5em;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        font-family: inherit;
+        border-radius: 0;
+        padding: 0;
+        cursor: text;
+        background-color: #fff;
+      }
+
+      input:focus,
+      textarea:focus ,select:focus{
+        outline: 0;
+        border-bottom: 1px solid #666;
+      }
+
+      label {
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+      /**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+      .input_box:placeholder-shown + .label_box {
+        cursor: text;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform-origin: left bottom;
+        transform: translate(0, 2.125rem) scale(1.2);
+      }
+      /**
+
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when
+* there's something in the input at all.
+*/
+      .input_box:not(:placeholder-shown) + .label_box,
+      .input_box:focus + .label_box {
+        transform: translate(0, 0) scale(1);
+        cursor: pointer;
+        color: #03a9f4;
+      }
+/* body end */
+	  /* social media icons & back to top  */
+.centerdiv {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centerdiv a {
+  height: 100px;
+  width: 100px;
+  background-color: #cbe3d5;
+  margin: 10px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: 1px 4px 10px 5px #dcdde1;
+  line-height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.fa-instagram {
+  color: #e84393;
+}
+.fa-twitter {
+  color: #0097e6;
+}
+.back-to-top {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #27ae60;
+  bottom: 40px;
+  right: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: #ffffff;
+}
+.centerdiv a i {
+  transition: all 0.3s linear;
+}
+.centerdiv a:hover .fa {
+  transform: scale(1.4);
+  color: #fff;
+}
+.centerdiv a::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 90%;
+  left: -50%;
+  background-color: chocolate;
+  transform: rotate(60deg);
+}
+.centerdiv a:hover::before {
+  animation: socialicons 0.8s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes socialicons {
+  0% {
+    top: 90%;
+    left: -50%;
+  }
+  50% {
+    top: -70%;
+    left: -10%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+/* social media icons & back to top */
+    </style>
+  </head>
+  <body onload="myload()">
+    <!-- loader -->
+    <div id="loading" class="bodyloader">
+      <div class="loading"></div>
+      <h2 class="loading-text">Loadding...</h2>
+    </div>
+    <!-- loader -->
+<!-- hrader -->
+<header class="header">
+	<nav class="navbar navbar-expand-lg navbar-light  bg-light fixed-top" style="background-color: #e3f2fd;
+		    box-shadow: 2px 1px 20px #e3f2fd;
+		">
+		<a class="navbar-brand" style="width:20%" href="#">LOGO</a>
+		<!-- <form class="form-inline my-2 my-lg-0" style="margin-left: 15%"> -->
+		<input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" aria-label="Search">
+		<i class="fa fa-map-marker-alt"></i></input>
+		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+			Search
+		</button>
+		<!-- </form> -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+
+			<form class="form-inline my-2 my-lg-0">
+
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">JoinForFree <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Advertise</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">LogIn</a>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</nav>
+
+
+</header>
+<!-- header -->
+    <section style="top :50px">
+      <h2 class="headline text-center">Sing up for better 'Expreance'</h2>
+      <div class="container">
+        <div class="contactinfo">
+          <div>
+            <h2>Sing Up</h2>
+
+          </div>
+        </div>
+
+        <div class="contactForms">
+          <h2>Fill Up</h2>
+          <div class="bannar-form">
+            <form class="form">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="field">
+                    <select
+                      type="text"
+                      name="silcat"
+                      id="silcat"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    >
+                    <option value="select">select</option>
+                   <option value="abc">abcs</option>
+                   <option value="xyz">xyz</option>
+                   <option value="azx">azx</option>
+                    </select>
+                    <label for="silcat" class="label_box">Select category</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="firstname" class="label_box">FirstName</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="lastname" class="label_box">LastName</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="input_box"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="email" class="label_box">Email</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field">
+                    <input
+                      type="tel"
+                      name="number"
+                      id="number"
+                      class="input_box"
+                      placeholder=" "
+                      maxlength="10"
+                      required
+                    />
+                    <label for="number" class="label_box">Phone Number</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="field">
+                    <textarea
+                      name="address"
+                      id="address"
+                      class="input_box"
+                      placeholder=" "
+                    ></textarea>
+                    <label for="address" class="label_box">Address</label>
+                  </div>
+                </div>
+              </div>
+              <div class="inputBox w-100">
+                <input type="submit" value="Proced" />
+              </div>
+              <output></output>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+				<footer>
+					<div class="">
+						<div style="background-color: #00071e;">
+							<div class="row">
+								<div class="col-md-6">
+									<ul style="list-style: square; margin-top: 2rem; color: #fff;">
+										<li>Terms & Condition </li>
+										<li>Privacy Policy </li>
+										<li>Contact Us </li>
+										<li>About US </li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<div class="centerdiv">
+
+										<a href="https://en-gb.facebook.com/login/" target="_blank">
+											<i class="fa fa-2x fa-facebook"></i>
+										</a>
+										<a href="" target="_blank">
+											<i class="fa fa-2x fa-instagram"></i>
+										</a>
+										<a href="" target="_blank">
+											<i class="fa fa-2x fa-twitter"></i>
+										</a>
+									</div>
+									<a class="back-to-top" href="#">
+										<i class="fa fa-arrow-up"></i>
+									</a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</footer>
+	<script>
+		var preloader = document.getElementById('loading');
+		function myload() {
+			preloader.style.display = "none";
+		}
+	</script>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
